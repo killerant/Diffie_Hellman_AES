@@ -10,14 +10,14 @@ public class AppServer {
     public AppServer() {
         try {
             // Generate a new key pair
-            KeyPairGenerator keyPairGenerator = KeyPairGenerator.getInstance("DH", "BC");
+            KeyPairGenerator keyPairGenerator = KeyPairGenerator.getInstance("DH");
             keyPairGenerator.initialize(2048);
             KeyPair keyPair = keyPairGenerator.generateKeyPair();
 
             // Get the public and private keys from the key pair
             appServerPublicKey = keyPair.getPublic();
             appServerPrivateKey = keyPair.getPrivate();
-        } catch (NoSuchAlgorithmException | NoSuchProviderException e) {
+        } catch (NoSuchAlgorithmException e) {
             e.printStackTrace();
         }
     }

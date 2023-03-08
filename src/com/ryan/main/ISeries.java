@@ -11,7 +11,7 @@ public class ISeries {
         try {
 
             // Generate a new key pair
-            KeyPairGenerator keyPairGenerator = KeyPairGenerator.getInstance("DH", "BC");
+            KeyPairGenerator keyPairGenerator = KeyPairGenerator.getInstance("DH");
             keyPairGenerator.initialize(2048);
             KeyPair keyPair = keyPairGenerator.generateKeyPair();
 
@@ -21,8 +21,6 @@ public class ISeries {
             System.out.println("iSeries Object Private Key Format:: " + iSeriesPrivateKey.getFormat());
             System.out.println("iSeries Object Public Key Format:: " + iSeriesPublicKey.getFormat());
         } catch (NoSuchAlgorithmException e) {
-            e.printStackTrace();
-        } catch (NoSuchProviderException e) {
             e.printStackTrace();
         }
     }
